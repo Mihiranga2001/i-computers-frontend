@@ -2,6 +2,8 @@ import { Link, Route, Routes } from "react-router-dom";
 import { LuBoxes, LuClipboardList } from "react-icons/lu";
 import { FiUsers } from "react-icons/fi";
 import { MdOutlineRateReview } from "react-icons/md";
+import AdminProductsPage from "./admin/AdminProductsPage";
+import AdminAddProductPage from "./admin/adminAddProductPage";
 
 export default function AdminPage(){
     return(
@@ -24,7 +26,8 @@ export default function AdminPage(){
             <div className="w-[calc(100%-300px)] h-full max-h-full bg-primary border-[10px] border-accent rounded-3xl overflow-y-scroll ">
             <Routes>
                 <Route path="/" element={<h1>Order</h1>}/>
-                <Route path="/products" element={<h1>Product</h1>}/>
+                <Route path="/products" element={<AdminProductsPage />}/>
+                <Route path="/add-product" element={<AdminAddProductPage />}/>
                 <Route path="/users" element={<h1>User</h1>}/>
                 <Route path="/reviews" element={<h1>Reviews</h1>}/>
             </Routes>
