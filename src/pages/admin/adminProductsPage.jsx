@@ -1,9 +1,9 @@
 import axios from "axios";
-import toast from "react-hot-toast";
 import { useEffect, useState } from "react";
 import { BiPlus } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import Loader from "../../components/loader";
+import ProductDeleteButton from "../../components/productDeleteButton";
 
 export default function AdminProductsPage() {
 	const [products, setProducts] = useState([]);
@@ -111,24 +111,11 @@ export default function AdminProductsPage() {
 											className="px-3 py-2 rounded-md w-[70px] text-center bg-accent/20 text-accent"
 											state={item}
 										>Edit</Link> */}
-											<button
-												onClick={
-                                                    () => {
-                                                        const token = localStorage.getItem("token");
-													    axios.delete(import.meta.env.VITE_BACKEND_URL+"/products/"+item.productID, {
-                                                            headers:{
-                                                                Authorization: `Bearer ${token}`
-                                                            }
-                                                        }).then(
-                                                            ()=>{
-                                                                toast.success("Product deleted successfully");
-                                                                setLoaded(false)
-                                                            }
-                                                        ) 
-												}}
-												className="px-3 py-2 rounded-md w-[70px] text-center bg-accent/20 text-accent hover:bg-accent/30 transition"
-											> Delete
-											</button>
+											<ProductDeleteButton
+											productID = {item.productID}
+											reload={() => {
+												setLoaded(false);
+												}}/>
 										</div>
 									</td>
 								</tr>
