@@ -1,13 +1,14 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { BiPlus } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Loader from "../../components/loader";
 import ProductDeleteButton from "../../components/productDeleteButton";
 
 export default function AdminProductsPage() {
 	const [products, setProducts] = useState([]);
 	const [loaded, setLoaded] = useState(false);
+	const navigate = useNavigate();
 	//const navigate = useNavigate();
 
 	useEffect(() => {
@@ -111,6 +112,15 @@ export default function AdminProductsPage() {
 											className="px-3 py-2 rounded-md w-[70px] text-center bg-accent/20 text-accent"
 											state={item}
 										>Edit</Link> */}
+										<button
+												onClick={() => {
+													navigate("/admin/update-product", { state: item });
+												}}
+												className="px-3 py-2 rounded-md w-[70px] text-center bg-accent/20 text-accent hover:bg-accent/30 transition"
+											>
+												Edit
+											</button>
+									
 											<ProductDeleteButton
 											productID = {item.productID}
 											reload={() => {

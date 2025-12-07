@@ -12,10 +12,10 @@ function App() {
         <Toaster position="top-right"/>
         <div className="w-full h-screen bg-primary text-secondary ">
            <Routes path="/">
-           <Route path="/" element={<Homepage/>}/>
-           <Route path="/login" element={<LoginPage/>}/>
-           <Route path="/register" element={<RegisterPage/>}/>
-           <Route path="/admin/*" element={<AdminPage/>}/>
+                <Route path="/*" element={<Homepage/>}/>
+                <Route path="/login" element={<LoginPage/>}/>
+                <Route path="/register" element={<RegisterPage/>}/>
+                <Route path="/admin/*" element={<AdminPage/>}/>
            </Routes>
         </div>
         </BrowserRouter>
