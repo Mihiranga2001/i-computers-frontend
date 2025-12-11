@@ -5,10 +5,39 @@ import { MdOutlineRateReview } from "react-icons/md";
 import AdminProductsPage from "./admin/AdminProductsPage";
 import AdminAddProductPage from "./admin/adminAddProductPage";
 import AdminUpdateProductPage from "./admin/adminUpdateProductPage";
+import AdminOrdersPage from "./admin/adminOrdersPage";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Loader from "../components/loader";
 
 export default function AdminPage(){
+    const [user, setUser] = useState(null);
+
+    useEffect(()=>{
+        const token = localStorage.getItem("token");
+        if(token == null){
+            window.location.href = "/";
+            return;
+        }
+        axios.get(import.meta.env.VITE_BACKEND_URL + "/users/", {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }).then((response)=>{
+            if(response.data.role == "admin"){
+                setUser(response.data);
+            }else{
+                window.location.href = "/";
+            }
+        }).catch(()=>{
+            window.location.href = "/login";
+        })
+    },[])
+
     return(
        <div className="w-full h-full flex bg-accent">
+        {user ?
+        <>
             <div className="w-[300px] bg-accent h-full">
 
                 <div className="w-full h-[100px] flex items-center text-primary ">
@@ -26,7 +55,7 @@ export default function AdminPage(){
             </div>
             <div className="w-[calc(100%-300px)] h-full max-h-full bg-primary border-[10px] border-accent rounded-3xl overflow-y-scroll ">
             <Routes>
-                <Route path="/" element={<h1>Order</h1>}/>
+                <Route path="/" element={<AdminOrdersPage />}/>
                 <Route path="/products" element={<AdminProductsPage />}/>
                 <Route path="/add-product" element={<AdminAddProductPage />}/>
                 <Route path="/update-product" element={<AdminUpdateProductPage />} />
@@ -34,7 +63,10 @@ export default function AdminPage(){
                 <Route path="/reviews" element={<h1>Reviews</h1>}/>
             </Routes>
             </div>
+            </>:
+            <Loader/>
+        }
             </div>
 
-    )
+    );
 }
