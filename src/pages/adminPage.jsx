@@ -2,7 +2,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import { LuBoxes, LuClipboardList } from "react-icons/lu";
 import { FiUsers } from "react-icons/fi";
 import { MdOutlineRateReview } from "react-icons/md";
-import AdminProductsPage from "./admin/AdminProductsPage";
+import AdminProductsPage from "./admin/adminProductsPage";
 import AdminAddProductPage from "./admin/adminAddProductPage";
 import AdminUpdateProductPage from "./admin/adminUpdateProductPage";
 import AdminOrdersPage from "./admin/adminOrdersPage";
