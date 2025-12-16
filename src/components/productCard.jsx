@@ -21,7 +21,7 @@ export default function ProductCard(props) {
 				<div className="w-full flex flex-col items-center">
 					{
 						product.labelledPrice > product.price &&
-						<h2 className="text-secondary/80 line-through decoration-gold/70 decoration-2 mr-2">
+						<h2 className="text-secondary/50 line-through decoration-black/50 decoration-2 mr-2">
 							LKR. {product.labelledPrice.toFixed(2)}
 						</h2>
 					}

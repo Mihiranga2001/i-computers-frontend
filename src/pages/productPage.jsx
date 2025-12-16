@@ -20,7 +20,7 @@ export default function ProductPage() {
 	}, []);
 
 	return (
-		<div className="w-full h-[calc(100vh-100px)]">
+		<div className="w-full">
 			{!loaded ? (
 				<Loader />
 			) : (

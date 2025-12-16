@@ -2,7 +2,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { GrGoogle } from "react-icons/gr";
+import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import Loader from "../components/loader";
 
@@ -110,7 +110,7 @@ export default function LoginPage() {
 						placeholder="your password"
 						className="w-full h-[50px]  rounded-lg border border-accent p-[10px] text-[20px] focus:outline-none focus:ring-2 focus:ring-gold"
 					/>
-					<p className="text-white not-italic w-full mb-[20px] text-right">
+					<p className="text-white not-italic w-full mb-[20px] text-center">
 						Forget your password?
 						<Link to="/forgot-password" className="text-gold italic">
 							Reset it here
@@ -124,7 +124,7 @@ export default function LoginPage() {
 						Login
 					</button>
 					<button onClick={googleLogin} className="w-full h-[50px] bg-accent text-white font-bold text-[20px] rounded-lg border-[2px] border-accent hover:bg-transparent hover:text-accent">
-						Login with <GrGoogle className="inline ml-2 mb-1" />
+						Login with <FcGoogle className="inline ml-2 mb-1" />
 					</button>
 					<p className="text-white not-italic">
 						Don't have an account?

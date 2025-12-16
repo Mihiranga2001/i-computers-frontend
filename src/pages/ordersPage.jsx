@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import ViewOrderInfo from "../components/viewOrderInfo";
 import Loader from "../components/loader";
 import ViewOrderInfoCustomer from "../components/viewOrderInfoCustomer";
 
