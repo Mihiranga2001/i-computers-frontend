@@ -5,7 +5,7 @@ export default function AboutPage() {
 const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="w-full min-h-screen px-6 md:px-12 py-16 bg-accent/80 text-primary">
+    <div className="w-full min-h-screen px-6 md:px-12 py-16 bg-primary text-accent">
       
       {/* Page Heading */}
       <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">

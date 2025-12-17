@@ -28,13 +28,13 @@ export default function Home() {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/80 to-black/90" />
+      <div className="absolute inset-0 bg-gradient-to-b from-accent/50 via-accent/50 to-accent/50" />
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-100px)] max-w-6xl flex-col justify-center px-4 py-12 md:flex-row md:items-center md:gap-12">
         {/* Left: Hero copy */}
         <div className="w-full text-center md:w-1/2 md:text-left space-y-7">
-          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-300">
+          <p className="text-s font-semibold uppercase tracking-[0.35em] text-cyan-300">
             I-Computers
           </p>
 
