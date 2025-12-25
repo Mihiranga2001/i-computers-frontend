@@ -8,7 +8,7 @@ export default function Footer() {
             <div className="w-full md:grid md:grid-cols-2 lg:grid-cols-4 gap-10 px-6 py-14">
                 <div>
 					<img src="/logo.png" alt="logo" className="h-[70px] mb-4" />
-                    <p classname="text-sm text-primary/80">
+                    <p className="text-sm text-primary/80">
                         Your trusted computer shop for gaming PCs, laptops,
 						accessories, and professional tech support. </p>
                 </div>
