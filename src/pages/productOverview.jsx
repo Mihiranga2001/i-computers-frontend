@@ -27,7 +27,7 @@ export default function ProductOverview() {
         toast.error("Product Not Found");
         setStatus("error");
       });
-  }, [productID]);
+  }, [productID] );
 
   useEffect(() => {
     axios
